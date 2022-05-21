@@ -2,6 +2,7 @@
 
 Requires the search macro from `GotimeServiceProvider` boot method.
 
+
 ## Development Process and Tasks
 
 - [x] Create basic data table
@@ -9,13 +10,17 @@ Requires the search macro from `GotimeServiceProvider` boot method.
 - [x] Add Sortable columns
 - [x] Searchable columns
 - [x] Create reusable <th> component
+- [x] Join table to get user details
+- [x] Cast date to and from `dd/mm/yy` using `Gotime::DateCast`
+- [x] Cast currency to and from cents `Gotime::CurrencyCast`
 - [ ] Delete
 - [ ] Add
 - [ ] Edit
 - [ ] Show
-- [ ] Cast Dates
 - [ ] Refactor with Traits
 - [ ] Datepicker
+
+
 
 
 

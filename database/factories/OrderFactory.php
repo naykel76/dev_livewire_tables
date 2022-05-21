@@ -18,6 +18,7 @@ class OrderFactory extends Factory
             'order_date' => Carbon::today()->subDays(rand(-365, 365)),
             'due_date' => Carbon::today()->subDays(rand(-365, 365)),
             'status' => $this->faker->randomElement(['paid', 'processing', 'canceled', '']),
+            'user_id' => random_int(1,20)
         ];
     }
 }

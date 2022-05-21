@@ -7,8 +7,8 @@
 
             <div>
                 <x-select wire:model="searchBy" for="searchBy" label="Search By" inline>
+                    <option value="name">Name</option>
                     <option value="status">Status</option>
-                    <option value="id">ID</option>
                     <option value="amount">Amount</option>
                 </x-select>
             </div>
@@ -18,6 +18,7 @@
         <thead>
             <tr>
                 <th>ID</th>
+                <x-table.th sortable wire:click="sortBy('name')" :direction="$sortBy === 'name' ? $sortDirection : null" class="cursor-pointer">Name</x-table.th>
                 <x-table.th sortable wire:click="sortBy('amount')" :direction="$sortBy === 'amount' ? $sortDirection : null" class="cursor-pointer">Amount</x-table.th>
                 <x-table.th sortable wire:click="sortBy('order_date')" :direction="$sortBy === 'order_date' ? $sortDirection : null" class="cursor-pointer">Order Date</x-table.th>
                 <x-table.th sortable wire:click="sortBy('due_date')" :direction="$sortBy === 'due_date' ? $sortDirection : null" class="cursor-pointer">Due Date</x-table.th>
@@ -29,6 +30,7 @@
 
             <tr>
                 <td>{{ $order->id }}</td>
+                <td>{{ $order->name }} <small>{{ $order->user_id }}</small></td>
                 <td>{{ $order->amount }}</td>
                 <td>{{ $order->order_date }}</td>
                 <td>{{ $order->due_date }}</td>
@@ -39,7 +41,7 @@
         @empty
 
             <tr>
-                <td class="tac pxy" colspan="4">There is nothing to be displayed.</td>
+                <td class="tac pxy" colspan="6">There is nothing to be displayed.</td>
             </tr>
 
         @endforelse

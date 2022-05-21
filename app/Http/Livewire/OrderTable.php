@@ -12,9 +12,9 @@ class OrderTable extends Component
     use WithPagination;
 
     public $search;
-    public $searchBy = 'status';
+    public $searchBy = 'name';
     public $sortDirection = "asc";
-    public $sortBy = "id";
+    public $sortBy = "orders.id";
 
     public function sortBy($field)
     {
@@ -28,11 +28,22 @@ class OrderTable extends Component
 
     public function render()
     {
+
+        // dd(Order::test());
+        $orders = Order::join('users', 'users.id', '=', 'orders.user_id')
+            ->select(
+                'orders.*',
+                'users.name'
+            )
+            ->search($this->searchBy, $this->search)
+            ->orderBy($this->sortBy, $this->sortDirection)
+            ->paginate(18);
+
+
         sleep(0.5);
+
         return view('livewire.order-table')->with([
-            'orders' => Order::search($this->searchBy, $this->search)
-                ->orderBy($this->sortBy, $this->sortDirection)
-                ->paginate(18),
+            'orders' => $orders,
         ]);
     }
 }
