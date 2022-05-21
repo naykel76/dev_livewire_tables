@@ -39,4 +39,9 @@ class UserFactory extends Factory
             ];
         });
     }
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class);
+    }
 }
