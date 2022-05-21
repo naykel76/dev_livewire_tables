@@ -1,24 +1,23 @@
 # NAYKEL Livewire Data Tables
 
-Simple order transaction table.
+Requires the search macro from `GotimeServiceProvider` boot method.
 
 ## Development Process and Tasks
 
-- [ ] Create basic data table
-- [ ] Add Pagination
-- [ ] Add Sortable columns
-- [ ] Create reusable <th> component
-- [ ] Searchable columns
-- [ ] Add Date picker component
-- [ ] Sortable Trait
-- [ ] Searchable Trait
-- [ ] Add CRUD functions
-- [ ] Delete from table
-- [ ] Add (modal)
-- [ ] Edit (modal)
-- [ ] Show (modal)
+- [x] Create basic data table
+- [x] Add Pagination
+- [x] Add Sortable columns
+- [x] Searchable columns
+- [x] Create reusable <th> component
+- [ ] Delete
+- [ ] Add
+- [ ] Edit
+- [ ] Show
+- [ ] Cast Dates
+- [ ] Refactor with Traits
+- [ ] Datepicker
 
 
-- Uses the search macro from `GotimeServiceProvider` boot method.
+
 
 
